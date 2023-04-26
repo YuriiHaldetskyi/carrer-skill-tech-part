@@ -19,7 +19,7 @@ export const patchUser = createAsyncThunk(
   "users/patchFollows",
   async (user, thunkAPI) => {
     try {
-      const result = await axios.put(`/TweetsTest/${user.id}`, {
+      const result = await axios.put(`/users/${user.id}`, {
         followers: user.isFollowing ? user.followers - 1 : user.followers + 1,
         isFollowing: !user.isFollowing,
       });
