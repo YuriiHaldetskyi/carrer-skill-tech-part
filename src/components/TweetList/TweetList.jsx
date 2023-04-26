@@ -1,19 +1,25 @@
 import { TweetListItem } from "../TweetListItem/TweetListItem";
 import { Cards, ListItem } from "./TweetList.styled";
-import { selectVisibleTweets } from "../../redux/selectors";
+import { selectTweets } from "../../redux/selectors";
 import { useSelector } from "react-redux";
+import { usePagination } from "../../hooks/pagination";
+import { LoadMoreBtn } from "../TweetList/TweetList.styled";
 export const TweetList = () => {
-  const tweets = useSelector(selectVisibleTweets);
-  console.log(tweets);
-  console.log();
+  const { page, loadMore } = usePagination(6);
+  const tweets = useSelector(selectTweets);
   return (
     <div>
       <Cards>
-        {tweets.map((tweet) => (
+        {tweets.slice(0, page).map((tweet) => (
           <ListItem key={tweet.id}>
             <TweetListItem item={tweet} />
           </ListItem>
         ))}
+        {tweets.length > page && (
+          <LoadMoreBtn type="button" onClick={loadMore}>
+            Load More
+          </LoadMoreBtn>
+        )}
       </Cards>
     </div>
   );

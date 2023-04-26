@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Info = styled.div`
+export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -67,30 +67,9 @@ export const FollowBtn = styled.button`
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
+  cursor: pointer;
   color: #373737;
   :hover {
-    background: tomato;
-  }
-`;
-
-export const LoadMoreBtn = styled.button`
-  display: block;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 12px 25px;
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  border-radius: 10.3108px;
-  border: none;
-  background-color: #5cd3a8;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
-  color: #373737;
-  :hover {
-    background: #ebd8ff;
+    background: green;
   }
 `;
