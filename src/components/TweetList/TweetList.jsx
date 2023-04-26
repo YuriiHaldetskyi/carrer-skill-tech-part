@@ -4,11 +4,13 @@ import { selectVisibleTweets } from "../../redux/selectors";
 import { useSelector } from "react-redux";
 export const TweetList = () => {
   const tweets = useSelector(selectVisibleTweets);
+  console.log(tweets);
+  console.log();
   return (
     <div>
       <Cards>
         {tweets.map((tweet) => (
-          <ListItem id={tweet.id}>
+          <ListItem key={tweet.id}>
             <TweetListItem item={tweet} />
           </ListItem>
         ))}
